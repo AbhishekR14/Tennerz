@@ -1,2 +1,2 @@
-[CLick Here](https://abhishekr14.github.io/Tenzies/) to play tenzies
+[Click Here](https://abhishekr14.github.io/Tenzies/) to play Tenzies
  
