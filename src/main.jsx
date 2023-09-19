@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import '../Stylesheets/index.css'
 import Tenzies from './tenzies.jsx'
+import LeaderBoard from './leaderboard.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/tenzies",
     element: <Tenzies />
+  },
+  {
+    path: "/leaderboard",
+    element: <LeaderBoard />
   }
 ],{ basename: import.meta.env.DEV ? '/' : '/Tenzies/' });
 

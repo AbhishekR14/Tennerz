@@ -1,0 +1,39 @@
+.leaderboard-main{
+    height: 300px;
+    overflow-y:scroll;
+    padding: 10px;
+}
+.leaderboard-time ,.leaderboard-name, .leaderboard-rank{
+    overflow: hidden;
+}
+@media (min-width: 0px) and (max-width: 600px){
+    .leaderboard-grid{
+        display: grid;
+        grid-template-columns: 25px 1fr 130px;
+        margin-bottom: 6px;
+        font-size: 18px;
+        height: 21px;
+        
+    }
+}
+@media(min-width:601px){
+    .leaderboard-grid{
+        display: grid;
+        grid-template-columns: 25px 1fr 150px;
+        margin-bottom: 10px;
+        font-size:22px;
+        height: 26px;       
+    }
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: antiquewhite; 
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(172, 158, 139); 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(116, 109, 101); 
+}

@@ -10,7 +10,7 @@ function App() {
         <Link to ='/tenzies'>
         <button className="home-buttons" href="/tenzies">Play Game</button>
         </Link>
-        <a href='/leaderBoard'>
+        <a href='/leaderboard'>
           <button className="home-buttons">View LeaderBoard</button>
         </a>
       </main>
