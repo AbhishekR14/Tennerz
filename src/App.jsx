@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <main>
-        <div class="dice-grid">
+        <h1 className="title">Tenzies</h1>
+        <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+        <div className="dice-grid">
         <Dice value="1"/>
         <Dice value="2"/>
         <Dice value="3"/>
@@ -17,6 +19,7 @@ function App() {
         <Dice value="1"/>
         <Dice value="1"/>
         </div>
+        <button className="roll-dice">Roll</button>
       </main>
     </>
   )

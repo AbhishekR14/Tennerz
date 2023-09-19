@@ -24,6 +24,19 @@ body {
         grid-template-rows: 40px 40px;
         row-gap: 15px;
     }
+    .roll-dice {
+        height: 40px;
+        width: 80px;
+        border: none;
+        border-radius: 6px;
+        background-color: #5035FF;
+        color: white;
+        font-size: 1.2rem;
+        font-family: 'Karla', sans-serif;
+        cursor: pointer;
+        margin-top: 50px;
+        align-self: center;
+    }
 }
 @media(min-width:601px){
     .dice-grid{
@@ -43,6 +56,40 @@ body {
         flex-direction: column;
         justify-content: center;
     }
+    .roll-dice {
+        height: 50px;
+        width: 100px;
+        border: none;
+        border-radius: 6px;
+        background-color: #5035FF;
+        color: white;
+        font-size: 1.2rem;
+        font-family: 'Karla', sans-serif;
+        cursor: pointer;
+        margin-top: 50px;
+        align-self: center;
+    }
 }
 
+.title {
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+}
 
+.instructions {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-top: 0;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.roll-dice:focus {
+    outline: none;
+}
+
+.roll-dice:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
