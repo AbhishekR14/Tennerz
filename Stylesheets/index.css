@@ -18,33 +18,21 @@ body {
         flex-direction: column;
         justify-content: center;
     }
-    .dice-grid{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 40px 40px;
-        row-gap: 15px;
-    }
-    .roll-dice {
-        height: 40px;
-        width: 80px;
+    .home-buttons {
+        height: 30px;
+        width: auto;
         border: none;
         border-radius: 6px;
-        background-color: #5035FF;
-        color: white;
-        font-size: 1.2rem;
-        font-family: 'Karla', sans-serif;
+        background-color: #8afccc;
+        color: black;
+        font-size: 1rem;
         cursor: pointer;
-        margin-top: 50px;
+        margin-top: 10px;
         align-self: center;
+        font-weight: 600;
     }
 }
 @media(min-width:601px){
-    .dice-grid{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 60px 60px;
-        row-gap: 20px;
-    }
     main{
         background-color: antiquewhite;
         padding: 30px 20px 29px 20px;
@@ -56,18 +44,18 @@ body {
         flex-direction: column;
         justify-content: center;
     }
-    .roll-dice {
-        height: 50px;
-        width: 100px;
+    .home-buttons {
+        height: 40px;
+        width: auto;
         border: none;
         border-radius: 6px;
-        background-color: #5035FF;
-        color: white;
-        font-size: 1.2rem;
-        font-family: 'Karla', sans-serif;
+        background-color: #8afccc;
+        color: rgb(0, 0, 0);
+        font-size: 1rem;
         cursor: pointer;
-        margin-top: 50px;
+        margin-top: 10px;
         align-self: center;
+        font-weight: 600;
     }
 }
 
@@ -77,19 +65,17 @@ body {
     text-align: center;
 }
 
-.instructions {
-    font-family: 'Inter', sans-serif;
+.instructions-staring-page {
     font-weight: 400;
-    margin-top: 0;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 30px;
 }
 
-.roll-dice:focus {
+.home-buttons:focus {
     outline: none;
 }
 
-.roll-dice:active {
+.home-buttons:active {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
