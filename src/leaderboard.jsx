@@ -1,5 +1,5 @@
 import React from "react";
-import "../Stylesheets/leaderBoard.css"
+import "../Stylesheets/leaderboard.css"
 import "../Stylesheets/index.css"
 import { Link } from 'react-router-dom'
 import LeaderBoardEntry from "./leaderboardEntry";
