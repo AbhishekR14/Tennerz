@@ -16,7 +16,8 @@ const router = createBrowserRouter([
   {
     path: "/tenzies",
     element: <Tenzies />
-  }
+  },
+  { basename: import.meta.env.DEV ? '/' : '/Tenzies/' }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
