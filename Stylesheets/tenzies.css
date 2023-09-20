@@ -18,6 +18,24 @@
         margin-top: 50px;
         align-self: center;
     }
+    .you-won{
+        font-size: larger;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    .add-to-leaderboard{
+        height: 40px;
+        width: auto;
+        border: none;
+        border-radius: 6px;
+        background-color: #c5e2c5;
+        color: black;
+        font-size: 1.2rem;
+        cursor: pointer;
+        align-self: center;
+    }
 }
 @media(min-width:601px){
     .dice-grid{
@@ -39,6 +57,24 @@
         margin-top: 50px;
         align-self: center;
     }
+    .you-won{
+        font-size: 1.6rem;;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .add-to-leaderboard{
+        height: 40px;
+        width: auto;
+        border: none;
+        border-radius: 6px;
+        background-color: #c5e2c5;
+        color: black;
+        font-size: 1.4rem;
+        cursor: pointer;
+        align-self: center;
+    }
 }
 
 .instructions {
@@ -50,10 +86,10 @@
     margin-bottom: 30px;
 }
 
-.roll-dice:focus {
+.roll-dice:focus , .add-to-leaderboard:focus{
     outline: none;
 }
 
-.roll-dice:active {
+.roll-dice:active , .add-to-leaderboard:active{
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
