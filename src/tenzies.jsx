@@ -1,6 +1,8 @@
 import React from "react";
 import Dice from './dice.jsx'
 import { nanoid } from 'nanoid'
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
 import '../Stylesheets/tenzies.css'
 import '../Stylesheets/index.css'
 
@@ -8,6 +10,7 @@ export default function tenzies(){
 
   const [dices , setDices] = React.useState(generateRandomDiceArray());
   const [gameWon , setGameWon] = React.useState(false);
+  const { width, height } = useWindowSize()
   function generateRandomDiceArray(){
     let diceArray = [];
     for(let i = 0 ; i < 10 ; i++){
@@ -69,6 +72,7 @@ export default function tenzies(){
         <div className="dice-grid">
           {diceElements}
         </div>
+        {gameWon &&<Confetti width={width} height={height} />}
         {gameWon && <div className="you-won">You Won!!</div>}
         {gameWon ? <button className="add-to-leaderboard">Add your time to the LeaderBoard</button>:<button className="roll-dice" onClick={rollDice}>Roll</button>}
       </main>
