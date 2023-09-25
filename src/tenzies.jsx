@@ -10,7 +10,12 @@ export default function tenzies(){
 
   const [dices , setDices] = React.useState(generateRandomDiceArray());
   const [gameWon , setGameWon] = React.useState(false);
-  const { width, height } = useWindowSize()
+  const {width, height} = useWindowSize()
+  const [startTime ,  setStartTime] = React.useState();
+  const [gameTime ,  setGameTime] = React.useState();
+  const [firstMove , setfirstMove] = React.useState('');
+
+
   function generateRandomDiceArray(){
     let diceArray = [];
     for(let i = 0 ; i < 10 ; i++){
@@ -43,10 +48,17 @@ export default function tenzies(){
     })
     if(count === 10){
       setGameWon(true);
+      const endTime = new Date();
+      const timeDiff = (endTime - startTime)/1000;
+      setGameTime(timeDiff);
     }
   }
 
   function changeSelected(id){
+    if(firstMove === ''){
+      setStartTime(new Date());
+      setfirstMove('moved');
+    }
     setDices(oldDice => oldDice.map(die => {
       return die.id === id ? {...die, isSelected: !die.isSelected} : die
     }))
