@@ -9,6 +9,8 @@ body {
 a{
     display: flex;
     justify-content: center;
+    width: fit-content;
+    align-self: center;
 }
 a:-webkit-any-link {
     color: -webkit-link;
