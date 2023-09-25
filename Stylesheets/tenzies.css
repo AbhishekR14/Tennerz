@@ -93,3 +93,16 @@
 .roll-dice:active , .add-to-leaderboard:active{
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
+
+form{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.add-your-name{
+    height: 30px;
+    width: 60%;
+    border-radius: 8px;
+    border-width: 1px;
+    padding-left: 12px;
+}

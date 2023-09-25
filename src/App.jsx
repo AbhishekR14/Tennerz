@@ -8,7 +8,7 @@ function App() {
         <h2>How to play?</h2>
         <p className="instructions-staring-page">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
         <Link to ='/tenzies'>
-        <button className="home-buttons" href="/tenzies">Play Game</button>
+          <button className="home-buttons">Play Game</button>
         </Link>
         <Link to='/leaderboard'>
           <button className="home-buttons">View LeaderBoard</button>

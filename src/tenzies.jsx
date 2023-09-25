@@ -1,6 +1,7 @@
 import React from "react";
 import Dice from './dice.jsx'
 import { nanoid } from 'nanoid'
+import { Form, Link } from 'react-router-dom'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import '../Stylesheets/tenzies.css'
@@ -14,7 +15,7 @@ export default function tenzies(){
   const [startTime ,  setStartTime] = React.useState();
   const [gameTime ,  setGameTime] = React.useState();
   const [firstMove , setfirstMove] = React.useState('');
-
+  const [playerName , setPlayerName] = React.useState('');
 
   function generateRandomDiceArray(){
     let diceArray = [];
@@ -64,6 +65,15 @@ export default function tenzies(){
     }))
   }
 
+  function handleName(event){
+    setPlayerName(event.target.value)
+  }
+
+  function addToLeaderBoard(){
+    console.log(playerName)
+    console.log(gameTime)
+  }
+
   React.useEffect(endGame,[dices])
 
   const diceElements = dices.map(dice => {
@@ -84,9 +94,23 @@ export default function tenzies(){
         <div className="dice-grid">
           {diceElements}
         </div>
+        {gameWon && <>
+          <div className="you-won">You Won in {gameTime} Seconds!!</div> 
+          <Form>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              className="add-your-name"
+              onChange={handleName}
+            />
+          </Form>
+        </>}
         {gameWon &&<Confetti width={width} height={height} />}
-        {gameWon && <div className="you-won">You Won!!</div>}
-        {gameWon ? <button className="add-to-leaderboard">Add your time to the LeaderBoard</button>:<button className="roll-dice" onClick={rollDice}>Roll</button>}
+        {gameWon ? 
+          <Link to='/leaderboard'> 
+            <button className="add-to-leaderboard" onClick={addToLeaderBoard}>Add to LeaderBoard</button> 
+          </Link>
+          :<button className="roll-dice" onClick={rollDice}>Roll</button>}
       </main>
     </>
   )
