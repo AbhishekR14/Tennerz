@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import '../Stylesheets/index.css'
-import Tenzies from './tenzies.jsx'
+import tennerz from './tennerz.jsx'
 import LeaderBoard from './leaderboard.jsx'
 import {
   createBrowserRouter,
@@ -15,14 +15,14 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/tenzies",
-    element: <Tenzies />
+    path: "/tennerz",
+    element: <tennerz />
   },
   {
     path: "/leaderboard",
     element: <LeaderBoard />
   }
-],{ basename: import.meta.env.DEV ? '/' : '/Tenzies/' });
+],{ basename: import.meta.env.DEV ? '/' : '/tennerz/' });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

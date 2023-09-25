@@ -15,8 +15,8 @@ export default function leaderBoard(){
                     time="2.01"
                 />
             </div>
-            <Link to ='/tenzies'>
-                <button className="home-buttons" href="/tenzies">Play Tenzies</button>
+            <Link to ='/tennerz'>
+                <button className="home-buttons" href="/tennerz">Play tennerz</button>
             </Link>
         </main>
     </>

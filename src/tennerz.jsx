@@ -4,10 +4,10 @@ import { nanoid } from 'nanoid'
 import { Form, Link } from 'react-router-dom'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
-import '../Stylesheets/tenzies.css'
+import '../Stylesheets/tennerz.css'
 import '../Stylesheets/index.css'
 
-export default function tenzies(){
+export default function tennerz(){
 
   const [dices , setDices] = React.useState(generateRandomDiceArray());
   const [gameWon , setGameWon] = React.useState(false);
@@ -89,7 +89,7 @@ export default function tenzies(){
   return (
     <>
       <main>
-        <h1 className="title">Tenzies</h1>
+        <h1 className="title">tennerz</h1>
         <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
         <div className="dice-grid">
           {diceElements}
