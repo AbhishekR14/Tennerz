@@ -16,7 +16,7 @@ export default function leaderBoard(){
                 />
             </div>
             <Link to ='/tennerz'>
-                <button className="home-buttons" href="/tennerz">Play tennerz</button>
+                <button className="home-buttons" href="/tennerz">Play Tennerz</button>
             </Link>
         </main>
     </>
