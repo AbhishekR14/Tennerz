@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import '../Stylesheets/index.css'
-import tennerz from './tennerz.jsx'
+import Tennerz from './tennerz.jsx'
 import LeaderBoard from './leaderboard.jsx'
 import {
   createBrowserRouter,
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/tennerz",
-    element: <tennerz />
+    element: <Tennerz />
   },
   {
     path: "/leaderboard",
