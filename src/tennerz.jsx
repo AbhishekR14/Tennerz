@@ -4,6 +4,8 @@ import { nanoid } from 'nanoid'
 import { Form, Link } from 'react-router-dom'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
+import { addDoc } from "firebase/firestore"
+import { leaderBoardCollection } from "./firebase.js"
 import '../Stylesheets/tennerz.css'
 import '../Stylesheets/index.css'
 
@@ -69,9 +71,12 @@ export default function tennerz(){
     setPlayerName(event.target.value)
   }
 
-  function addToLeaderBoard(){
-    console.log(playerName)
-    console.log(gameTime)
+  async function addToLeaderBoard(){
+    const LeaderBoardCollection = {
+      name : playerName,
+      time : gameTime
+    };
+    const newEntryRef = await addDoc(leaderBoardCollection,LeaderBoardCollection);
   }
 
   React.useEffect(endGame,[dices])
