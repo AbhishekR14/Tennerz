@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     path: "/leaderboard",
     element: <LeaderBoard />
   }
-],{ basename: import.meta.env.DEV ? '/' : '/tennerz/' });
+],{ basename: import.meta.env.DEV ? '/' : '/Tennerz/' });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
