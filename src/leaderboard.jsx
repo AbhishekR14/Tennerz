@@ -4,7 +4,7 @@ import "../Stylesheets/index.css"
 import { Link } from 'react-router-dom'
 import LeaderBoardEntry from "./leaderboardEntry";
 import { leaderBoardCollection } from "./firebase.js"
-import { getDocs } from 'firebase/firestore';
+import { getDocs, orderBy , query } from 'firebase/firestore';
 
 export default function leaderBoard(){
     const [sortedLeardBoard, setSortedLeardBoard] = React.useState([]);
@@ -12,18 +12,19 @@ export default function leaderBoard(){
     React.useEffect(() => {
         async function fetchData() {
         try {
-            const querySnapshot = await getDocs(leaderBoardCollection);
+            const querySnapshot = await getDocs(query(leaderBoardCollection, orderBy('time','asc')));
             const leaderboardData = [];
+            let ranknumber = 1;
             querySnapshot.forEach((doc) => {
                 const docdata = {
                     key : doc.id,
-                    rank : 1,
+                    rank : ranknumber,
                     name : doc.data().name,
                     time : doc.data().time
                 };
                 leaderboardData.push(docdata);
+                ranknumber++;
             });
-            //const sortedBoard = call the sorting function
             setSortedLeardBoard(leaderboardData);
         } catch (error) {
             console.error('Error fetching data: ', error);
