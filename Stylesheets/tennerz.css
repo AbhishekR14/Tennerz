@@ -106,3 +106,12 @@ form{
     border-width: 1px;
     padding-left: 12px;
 }
+.add-your-name.input-error{
+    border: 2px solid #e74c3c;
+    outline: none;
+}
+.name-error{
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin: 4px 0 0 0;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import Dice from './dice.jsx'
 import { nanoid } from 'nanoid'
-import { Form, Link } from 'react-router-dom'
+import { Form, useNavigate } from 'react-router-dom'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import { addDoc } from "firebase/firestore"
@@ -18,6 +18,8 @@ export default function tennerz(){
   const [gameTime ,  setGameTime] = React.useState();
   const [firstMove , setfirstMove] = React.useState('');
   const [playerName , setPlayerName] = React.useState('');
+  const [nameError, setNameError] = React.useState(false);
+  const navigate = useNavigate();
 
   function generateRandomDiceArray(){
     let diceArray = [];
@@ -68,15 +70,21 @@ export default function tennerz(){
   }
 
   function handleName(event){
-    setPlayerName(event.target.value)
+    setPlayerName(event.target.value);
+    if(nameError) setNameError(false);
   }
 
   async function addToLeaderBoard(){
+    if(!playerName.trim()){
+      setNameError(true);
+      return;
+    }
     const LeaderBoardCollection = {
       name : playerName,
       time : gameTime
     };
-    const newEntryRef = await addDoc(leaderBoardCollection,LeaderBoardCollection);
+    await addDoc(leaderBoardCollection,LeaderBoardCollection);
+    navigate('/leaderboard');
   }
 
   React.useEffect(endGame,[dices])
@@ -100,21 +108,20 @@ export default function tennerz(){
           {diceElements}
         </div>
         {gameWon && <>
-          <div className="you-won">You Won in {gameTime} Seconds!!</div> 
+          <div className="you-won">You Won in {gameTime} Seconds!!</div>
           <Form>
             <input
               type="text"
               placeholder="Enter your name"
-              className="add-your-name"
+              className={`add-your-name${nameError ? ' input-error' : ''}`}
               onChange={handleName}
             />
+            {nameError && <p className="name-error">Please enter your name to submit.</p>}
           </Form>
         </>}
         {gameWon &&<Confetti width={width} height={height} />}
-        {gameWon ? 
-          <Link to='/leaderboard'> 
-            <button className="add-to-leaderboard" onClick={addToLeaderBoard}>Add to LeaderBoard</button> 
-          </Link>
+        {gameWon ?
+          <button className="add-to-leaderboard" onClick={addToLeaderBoard}>Add to LeaderBoard</button>
           :<button className="roll-dice" onClick={rollDice}>Roll</button>}
       </main>
     </>
